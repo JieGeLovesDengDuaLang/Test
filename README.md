@@ -33,13 +33,13 @@ class NiHao:BasePlugin
 {
   public override void Load()
   {
-     Log.LogInfo("sb");
+     Log.LogInfo("hi");
   }
 }
 ```
 D.
 ```csharp
-class sb
+class test
 {
    static void Main()
    {
@@ -48,7 +48,7 @@ class sb
 }
 ```
 
-## 下面哪个选项的代码能够正常修补？
+## 下面哪个选项的代码不能够正常修补？
 游戏代码：
 ```csharp
 class Game
@@ -66,7 +66,7 @@ A:我想要修改返回值
 [HarmonyPatch(typeof(Game),"GameStart")]
 class GameStartPatch
 {
-   public static void Prefix(ref bool __result)
+   public static void Prefix(bool __result)
    {
       __result=false;
    }
